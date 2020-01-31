@@ -1,0 +1,23 @@
+# ===================================================================
+# Spring Boot configuration for the "dev" profile.
+#
+# This configuration overrides the applicant.yml file.
+# ===================================================================
+
+spring:
+    devtools:
+        restart:
+            enabled: true
+        livereload:
+            enabled: true
+    jpa:
+        properties:
+            hibernate.show_sql: true
+            hibernate.format_sql: false
+            hibernate.use_sql_comments: false
+    output:
+        ansi:
+            enabled: ALWAYS
+
+  
+

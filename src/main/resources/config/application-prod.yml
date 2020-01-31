@@ -1,0 +1,28 @@
+# ===================================================================
+# Spring Boot configuration for the "prod" profile.
+#
+# This configuration overrides the applicant.yml file.
+# ===================================================================
+
+spring:
+    profiles:
+        active: prod
+    devtools:
+        restart:
+            enabled: false
+        livereload:
+            enabled: false
+    jpa:
+        properties:
+            hibernate.show_sql: false
+            hibernate.format_sql: false
+            hibernate.use_sql_comments: false
+
+
+
+# ===================================================================
+# Flyway specific properties
+# ===================================================================
+
+flyway:
+    enabled: false

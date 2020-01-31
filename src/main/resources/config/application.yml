@@ -1,0 +1,56 @@
+# ===================================================================
+# Spring Boot configuration.
+#
+# This configuration will be overriden by the Spring profile you use,
+# for example applicant-dev.yml if you use the "dev" profile.
+# ===================================================================
+
+spring:
+    
+    jpa:
+        properties:
+            hibernate.dialect:  org.hibernate.dialect.MySQLDialect
+            hibernate.id.new_generator_mappings: false
+            hibernate.hbm2ddl.auto: update
+            show-sql: true
+         #   hibernate.current_session_context_class: org.springframework.orm.hibernate4.SpringSessionContext
+    mail:
+        host: smtp.pepipost.com
+        username: msrtcexampepi
+        password: Chelsea#321
+        properties.mail.smtp.starttls.enable: true
+        port: 2525
+        protocol: smtp
+    http:
+        multipart:
+            max-file-size: 10MB
+    datasource: 
+       driver-class-name: com.mysql.jdbc.Driver
+       #url: jdbc:mysql://localhost/springsecuritytiles?autoReconnect=true
+       url: jdbc:mysql://localhost:3306/springsecuritybackend
+       username: root
+       password: root
+       
+    
+    
+server:
+    error:
+        whitelabel:
+            enabled: false
+    port: 9090
+
+jwt:
+    header: Authorization
+    secret: mySecret
+    expiration: 604800
+    route:
+        authentication:
+            path: auth
+            refresh: refresh
+              
+# ===================================================================
+# Flyway specific properties
+# ===================================================================
+
+flyway:
+    enabled: false
